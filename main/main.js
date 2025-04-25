@@ -87,7 +87,7 @@ const products = [
   document.body.appendChild(header)
 
   const logoJs = document.createElement("img")
-  logoJs.src = "/.assets/JavaScript-logo.png"
+  logoJs.src = "./assets/JavaScript-logo.png"
   logoJs.className = "logoJs"
   header.appendChild(logoJs)
 
