@@ -82,7 +82,7 @@ const products = [
   ];
 
 
-  //ELEMENTOS PRINCIPALES DE LA WEB
+  //NAVBAR
   const header = document.createElement("header")
   document.body.appendChild(header)
 
@@ -98,12 +98,39 @@ const products = [
   const navTitles = ["Todas las categorías","Catálogo", "Mi cuenta" ]
 
   navTitles.forEach(title => {
-
     const navBarLi = document.createElement("li")
     navBarLi.className = "navBarLi"
     navBarLi.textContent = title
     headerUl.appendChild(navBarLi)
+  
+    if (title === "Catálogo") {
+      const desplegable = document.createElement("ul")
+      desplegable.className = "desplegable"
+  
+      const subcategorias = ["Ordenadores", "Monitores", "Smartphones"]
+      subcategorias.forEach(subcategoria => {
+        const desplegableLi = document.createElement("li")
+        const desplegableEnlace = document.createElement("a")
+        desplegableEnlace.href = "#"
+        desplegableEnlace.textContent = subcategoria
+        desplegable.appendChild(desplegableLi)
+        desplegableLi.appendChild(desplegableEnlace)
+      })
+  
+      navBarLi.appendChild(desplegable)  
+      desplegable.style.display = "none"
+  
+      navBarLi.addEventListener("mouseenter", function() {
+        desplegable.style.display = "block"
+      })
+  
+      navBarLi.addEventListener("mouseleave", function() {
+        desplegable.style.display = "none"
+      })
+    }
   })
+
+ 
 
 
 
@@ -112,7 +139,7 @@ const products = [
   firstSection.className = "firstSection"
 
 
-  
+  //Bucle productos
   products.forEach(product => {
   const productContainer = document.createElement("div")
   productContainer.className = "product-item"
@@ -132,12 +159,12 @@ const products = [
   productContainer.appendChild(productTitle)
 
   const priceSpan = document.createElement("span")
-  priceSpan.textContent = product.price
+  priceSpan.textContent = `${product.price} €`
   priceSpan.className = "price"
   productContainer.appendChild(priceSpan)
 
   const peopleReviews = document.createElement("span")
-  peopleReviews.textContent = product.reviews
+  peopleReviews.textContent = `${product.reviews} valoraciones`
   peopleReviews.className = "reviews"
   productContainer.appendChild(peopleReviews)
 
@@ -153,6 +180,22 @@ const products = [
   comprarButton.className = "comprarButton"
   comprarButton.textContent = "Añadir al carro"
   productContainer.appendChild(comprarButton)
+
+  //Rating estrellas
+  const starsContainer = document.createElement("div")
+  starsContainer.className = "stars-container"
+
+  for (let i = 1; i <= 5; i++) {
+    const star = document.createElement("span")
+    star.className = "star"
+    if (i <= product.stars) {
+      star.textContent = "★"
+    } else {
+      star.textContent = "☆"
+    }
+    starsContainer.appendChild(star)
+  }
+  productContainer.appendChild(starsContainer)
 
 
   comprarButton.addEventListener("click", function(){
@@ -180,6 +223,7 @@ const products = [
 
 })
 
+//Carrito de compra y sus elementos
   let carroCount = 0
   let carroElementos = []
 
@@ -201,4 +245,5 @@ const products = [
   
 
   
-  
+//Menu desplegable
+
