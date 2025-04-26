@@ -367,3 +367,28 @@
         
       }
   }
+
+  @media (max-width: 485px) {
+    
+    .searchContainer{
+      justify-content: center;
+      
+    }
+  
+    .searchInput {
+      width: 80vw;
+      min-height: 25%;
+      margin: 0 auto;  
+      margin-top: 30px; 
+    }
+  
+    .searchInput::placeholder {
+      text-align: center;
+      
+    }
+  
+    .landingPage {
+      display: none;
+      
+    }
+}
