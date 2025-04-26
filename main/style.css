@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 /* Estilos generales */
 * {
     box-sizing: border-box;
     margin: 0;
+    
   }
   
   body {
@@ -20,7 +23,7 @@
     background-color: #eee;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 0 20px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -48,8 +51,8 @@
   }
   
   .navBarLi {
-    margin-left: 20px;
-    font-size: 1.1em;
+    margin-left: 10px;
+    font-size: 1em;
     font-weight: normal;
     cursor: pointer;
     transition: transform 0.1s ease-in-out;
@@ -78,10 +81,11 @@
   
   
   .headerUl .desplegable li a {
-    padding: 12px 16px;
+    padding: 10px 12px;
     color: #333;
     display: block;
     text-decoration: none;
+    font-size: 0.9em;
   }
   
   .headerUl .desplegable li a:hover {
@@ -91,12 +95,13 @@
   .cartContainer {
     display: flex;
     align-items: center;
-    padding: 8px 12px;
+    padding: 6px 8px;
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.1s ease-in-out;
     border: 1px solid #ccc;
     background-color: transparent;
+    margin-left: 10px;
   }
   
   .cartContainer:hover {
@@ -105,15 +110,15 @@
   }
   
   .cartContainer img {
-    max-height: 20px;
-    margin-right: 5px;
+    max-height: 18px;
+    margin-right: 3px;
   }
   
   .cartNumber {
     color: #d32f2f;
     font-weight: bolder;
-    font-size: 1em;
-    margin-left: 3px;
+    font-size: 0.9em;
+    margin-left: 2px;
   }
   
   /* Sección de productos */
@@ -220,4 +225,145 @@
     font-size: 2em;
     color: rgb(255, 204, 0);
     margin-right: 2px;
+  }
+  
+  .boton-desplegar {
+    display: none;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 11;
+  }
+  
+  .menu-desplegable {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #eee;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  
+  .menu-desplegable .headerUl {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .menu-desplegable .navBarLi {
+    margin-left: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .menu-desplegable .navBarLi:last-child {
+    border-bottom: none;
+  }
+  
+  
+  
+  @media (max-width: 485px) {
+    header {
+      flex-wrap: wrap;
+      height: 100px;
+    }
+
+    .headerUl {
+        font-size: max(0.7em);
+        margin: 0 auto;
+        
+    }
+
+    .logoJs {
+        display: none;
+    }
+
+    .cartContainer{
+        justify-content: center;
+        margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 345px) {
+    .headerUl {
+        font-size: max(0.7em);
+        margin: 0 auto;
+        margin-top: 20px;
+        
+    }
+  }
+
+  .searchContainer {
+    height: 200px;
+    background-color: #7777772d;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-image: url(./assets/landscape.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-bottom: solid rgba(0, 0, 0, 0.034) 3px;
+    border-top: solid rgba(0, 0, 0, 0.034) 3px;
+  }
+
+  .searchInput {
+    width: 40vw;
+    min-height: 30%;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+  }
+
+  .searchInput::placeholder {
+    text-align: center;
+    
+  }
+
+  .landingPage {
+    color: white;
+    font-family: "IBM Plex Mono", monospace;
+    margin: 0 auto;
+    font-size: min(7vw, 8em);
+    display: flex;
+    text-shadow: 2px 10px 5px rgba(0, 0, 0, 0.5);
+    
+  }
+
+  @media (max-width: 680px) {
+    
+      .searchContainer{
+        justify-content: center;
+      }
+    
+      .searchInput {
+        width: 80vw;
+        min-height: 25%;
+        margin: 0 auto;
+        
+      }
+    
+      .searchInput::placeholder {
+        text-align: center;
+        
+      }
+    
+      .landingPage {
+        display: none;
+        
+      }
   }

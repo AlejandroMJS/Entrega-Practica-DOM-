@@ -130,13 +130,27 @@ const products = [
     }
   })
 
- 
-
 
 
   const firstSection = document.createElement("section")
   document.body.appendChild(firstSection)
   firstSection.className = "firstSection"
+
+  const searchContainer = document.createElement("section")
+  document.body.insertBefore(searchContainer, firstSection)
+  searchContainer.className = "searchContainer"
+
+  const searchInput = document.createElement("input")
+  searchInput.type = "text"
+  searchInput.placeholder = "Buscar productos..."
+  searchInput.className = "searchInput"
+  searchContainer.appendChild(searchInput)
+
+  const landingPage = document.createElement("h1")
+  searchContainer.appendChild(landingPage)
+  landingPage.textContent = "Landing Page"
+  landingPage.className = "landingPage"
+  
 
 
   //Bucle productos
@@ -217,10 +231,6 @@ const products = [
     
   })
 
-  
-
-
-
 })
 
 //Carrito de compra y sus elementos
@@ -243,7 +253,4 @@ const products = [
   cartNumber.className = "cartNumber"
   cartNumber.textContent = 0
   
-
   
-//Menu desplegable
-
