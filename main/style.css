@@ -62,6 +62,7 @@ body {
     transform: scale(1.1);
 }
 
+
 .firstSection {
     width: 100vw;
     background-color: #ffffff;
@@ -91,7 +92,7 @@ body {
 }
 
 .imagesDiv {
-    width: 200px;
+    max-width: 200px;
 }
 
 .images {
@@ -105,7 +106,7 @@ span, h2 {
 }
 
 h2 {
-    font-size: min(3.5vw, 2rem);
+    font-size: min(6vw, 1.3rem);
 }
 
 span {
@@ -115,19 +116,50 @@ span {
 
 .comprarButton {
     max-width: 200px;
-    height: 50px;
+    height: 70px;
     margin-top: 20px;
     background-color: rgb(248, 255, 47);
     border-style: none;
     border-radius: 5px;
     color: black;
-    font-size: min(2vw, 1.8rem);
+    font-size: min(6vw, 1.4rem);
     text-align: center;
     transition: transform 0.1 ease-in-out;
     cursor: pointer;
     padding: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.67);
+    overflow: hidden;
+    text-align: end;
 }
+
+
+.cartNumber {
+    color: red;
+    font-weight: bolder;
+    font-size: 1em;
+    font-family: sans-serif;
+}
+
+.cartContainer {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    width: 60px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgb(255, 255, 255);
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+    border: solid white 2px;
+    
+}
+
+.cartContainer:hover {
+    transform: scale(1.1);
+    background-color: #ffe53b;
+    box-shadow: 0 5px 10px rgb(0, 0, 0);
+    border: none;
+}
+
 
 .comprarButton:hover {
     transform: scale(1.05);
@@ -164,6 +196,7 @@ span {
         width: 150px;
     }
 
+
     h2 {
         font-size: 1em;
     }
@@ -175,4 +208,6 @@ span {
     .firstSection {
         padding: 15px;
     }
+    
+
 }

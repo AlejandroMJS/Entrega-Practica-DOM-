@@ -112,9 +112,7 @@ const products = [
   firstSection.className = "firstSection"
 
 
-  let carroCount = 0
-  let carroElementos = []
-
+  
   products.forEach(product => {
   const productContainer = document.createElement("div")
   productContainer.className = "product-item"
@@ -164,8 +162,43 @@ const products = [
     console.log(carroElementos)
     console.log(carroCount)
 
+    cartNumber.textContent = carroCount
+
+    comprarButton.textContent = "¡Añadido!"
+
+   
+
+    shoppingCart.addEventListener("click", function() {
+        alert(`Elementos en la cesta: ${carroCount}`) 
+    })
+    
   })
+
+  
 
 
 
 })
+
+  let carroCount = 0
+  let carroElementos = []
+
+
+  const cartContainer = document.createElement("div")
+  header.appendChild(cartContainer)
+  cartContainer.className = "cartContainer"
+
+
+  const shoppingCart = document.createElement("img")
+  shoppingCart.src = "./assets/shopping-cart.svg"
+  cartContainer.appendChild(shoppingCart)
+
+
+  const cartNumber = document.createElement("span")
+  cartContainer.appendChild(cartNumber)
+  cartNumber.className = "cartNumber"
+  cartNumber.textContent = 0
+  
+
+  
+  
