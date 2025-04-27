@@ -158,7 +158,8 @@ const products = [
   firstSection.appendChild(productContainer);
   firstSection.insertBefore(smartPhone, productContainer);
   
-
+  const aside = document.querySelector(".marcas-modelos")
+  firstSection.insertBefore(aside,smartPhone)
 
   //Bucle productos
   products.forEach(product => {
@@ -234,6 +235,7 @@ const products = [
 
     shoppingCart.addEventListener("click", function() {
         alert(`Elementos en la cesta: ${carroCount}`) 
+        shoppingCart.removeEventListener("click", mostrarMensajeCarrito)
     })
     
   })
@@ -260,4 +262,60 @@ const products = [
   cartNumber.className = "cartNumber"
   cartNumber.textContent = 0
   
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const footer = document.createElement('footer')
+    const footerContent = document.createElement('div')
+    footerContent.className = 'footer-content'
+  
+    const socialIcons = document.createElement('div')
+    socialIcons.className = 'social-icons'
+  
+    const socialLinks = [
+      { href: '#', src: './assets/linkedIn.svg', alt: 'LinkedIn' },
+      { href: '#', src: './assets/twitter.svg', alt: 'Twitter' },
+      { href: '#', src: './assets/facebook.svg', alt: 'Facebook' },
+      { href: '#', src: './assets/instagram.svg', alt: 'Instagram' },
+      { href: '#', src: './assets/youtube.svg', alt: 'YouTube' },
+      { href: '#', src: './assets/discord.svg', alt: 'Discord' },
+      { href: '#', src: './assets/github.svg', alt: 'GitHub' },
+      { href: '#', src: './assets/tiktok.svg', alt: 'TikTok' },
+      { href: '#', src: './assets/whatsapp.svg', alt: 'WhatsApp' },
+      { href: '#', src: './assets/reddit.svg', alt: 'Reddit' },
+      { href: '#', src: './assets/snapchat.svg', alt: 'Snapchat' }
+    ];
+  
+    socialLinks.forEach(link => {
+      const a = document.createElement('a')
+      a.href = link.href
+      a.target = '_blank'
+      a.rel = 'noopener noreferrer'
+  
+      const img = document.createElement('img')
+      img.src = link.src
+      img.alt = link.alt
+  
+      a.appendChild(img)
+      socialIcons.appendChild(a)
+    });
+  
+    const copyrightDiv = document.createElement('div')
+    copyrightDiv.className = 'copyright'
+    copyrightDiv.innerHTML = '&copy; 2025 AlejandroMJS'
+  
+    footerContent.appendChild(socialIcons)
+    footerContent.appendChild(copyrightDiv)
+    footer.appendChild(footerContent)
+  
+    document.body.appendChild(footer)
+  })
+  
+
+  const spanHora = document.querySelector('.time')
+
+  const ahora = new Date()
+  const horas = ahora.getHours().toString().padStart(2, '0')
+  const minutos = ahora.getMinutes().toString().padStart(2, '0')
+  
+  spanHora.textContent = `${horas}:${minutos}`
   
