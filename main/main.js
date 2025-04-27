@@ -148,8 +148,15 @@ const products = [
 
   const landingPage = document.createElement("h1")
   searchContainer.appendChild(landingPage)
-  landingPage.textContent = "Landing Page"
+  landingPage.textContent = "Computer Zone"
   landingPage.className = "landingPage"
+  
+
+  const smartPhone = document.querySelector(".smartphone");
+  const productContainer = document.createElement("div");
+  productContainer.className = "productContainer";
+  firstSection.appendChild(productContainer);
+  firstSection.insertBefore(smartPhone, productContainer);
   
 
 
