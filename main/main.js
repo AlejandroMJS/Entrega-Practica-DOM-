@@ -141,7 +141,7 @@ const products = [
   searchContainer.className = "searchContainer"
 
   const searchInput = document.createElement("input")
-  searchInput.type = "text"
+  searchInput.type = "search"
   searchInput.placeholder = "Buscar productos..."
   searchInput.className = "searchInput"
   searchContainer.appendChild(searchInput)
